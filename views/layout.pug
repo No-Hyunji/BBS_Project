@@ -1,0 +1,81 @@
+doctype html
+html(lang="ko")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport",content="width=device-width, initial-scale=1")
+    title= title
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css")
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js")
+
+    style.
+      @font-face {
+        font-family: 'S-CoreDream-5Medium';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-5Medium.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+      }
+      * {
+        margin:0;
+        padding:0;
+        font-family: 'S-CoreDream-5Medium';
+      }
+      header{
+        margin-bottom:0 !important;
+      }
+      nav {
+        margin-top:0;
+        background-color:#000000;
+        color:white;
+      }
+      ul {
+        list-style : none;
+        display: flex;
+      }
+      li{
+        display:inline-block;
+        padding:10px 15px;
+        cursor:pointer;
+      }
+      li:first-child{
+        margin-left:20px;
+      }
+      li:nth-child(3){
+        margin-left:auto;
+      }
+      li:nth-child(4){
+        margin-right:20px;
+      }
+      li:hover{
+        background-color:#aaa;
+        color:#0B1422;
+        
+      }
+    script.
+      $(function(){
+        
+        $("nav ul li").click(function(){
+        
+          let text = $(this).text();
+        
+          if(text === '자유게시판'){
+        
+            document.location.href = "/bbs/list";
+          }
+        })
+      })
+
+
+  body
+    header.jumbotron.text-center.bg-dark.text-white
+      h1 BBS 2021 
+      p BBS 2021 with NodeJS
+
+    nav
+      ul
+        li Home
+        li 자유게시판
+        li 회원가입
+        li 로그인 
+    block content
