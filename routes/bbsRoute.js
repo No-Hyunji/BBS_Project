@@ -18,7 +18,6 @@ router.get("/write", function (req, res) {
 router.post("/write", function (req, res) {
   req.body.b_date = moment(new Date()).format("YYYY-MM-DD");
   req.body.b_time = moment(new Date()).format("HH:mm:ss");
-  req.body.b_count = 0;
 
   let data = new bbsVO(req.body);
 
